@@ -27,7 +27,6 @@ class BookRequest(BaseModel):
     rating: int
 
 
-
 BOOKS = [
 
     Book(1, 'Computer Science', 'Intigam G', 'codingWInti', 10),
@@ -49,3 +48,10 @@ async def create_book(book_request: BookRequest):
     print(type(book_request))
     new_book = Book(**book_request.model_dump())
     BOOKS.append(new_book)
+
+
+@app.put("/books/{title}")
+async def book_update(title: str, updated_book=BookRequest):
+    for i in range(len(BOOKS)):
+        if BOOKS[i].title.casefold() == title.casefold():
+            BOOKS[i] = updated_book
