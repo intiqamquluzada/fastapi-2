@@ -19,6 +19,7 @@ class Book:
         self.rating = rating
 
 
+
 class BookRequest(BaseModel):
     id: int
     title: str
