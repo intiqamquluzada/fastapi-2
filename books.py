@@ -27,6 +27,7 @@ class BookRequest(BaseModel):
     rating: int
 
 
+
 BOOKS = [
 
     Book(1, 'Computer Science', 'Intigam G', 'codingWInti', 10),
