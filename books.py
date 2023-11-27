@@ -38,10 +38,19 @@ BOOKS = [
 
 ]
 
+fake_items_db = [
+    {"name": "Intigam", "age": 21},
+    {"name": "Husein", "age": 20},
+    {"name": "Nicat", "age": 21},
+    {"name": "Elshan", "age": 20},
+    {"name": "Samad", "age": 21},
+]
+
+
 
 @app.get("/")
 async def all_books():
-    return {"message": "Hello world!", "description": "First project on FastAPI"}
+    return fake_items_db
 
 
 @app.post("/create/book")
